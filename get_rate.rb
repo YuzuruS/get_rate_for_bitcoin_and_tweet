@@ -15,7 +15,7 @@ client = GarageClient::Client.new(
 
 res = client.get("/echo/price")
 
-Dotenv.load
+Dotenv.load File.expand_path(File.dirname($0)) + '/.env'
 client = Twitter::REST::Client.new do |config|
   config.consumer_key        = ENV["CONSUMER_KEY"]
   config.consumer_secret     = ENV["CONSUMER_SECRET"]
